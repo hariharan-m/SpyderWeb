@@ -19,6 +19,13 @@ import subprocess
 __version__ = '1.2.1'
 
 
+import io
+try:
+    to_unicode = unicode
+except NameError:
+    to_unicode = str
+    
+
 PY3 = sys.version_info >= (3,)
 
 if PY3:
@@ -243,6 +250,13 @@ def main():
         print(yellow('Could not decode json: {}'.format(e)))
         print('curl result:', p.returncode, grayscale[16](out), grayscale[16](err))
         quit(None, 1)
+
+    with io.open('data.json', 'w', encoding='utf8') as outfile:
+        str_ = json.dumps(out,
+                        indent=4, sort_keys=True,
+                          separators=(',', ': '), ensure_ascii=False)
+        outfile.write(to_unicode(str_))
+
     for k in d:
         if k.startswith('time_'):
             d[k] = int(d[k] * 1000)

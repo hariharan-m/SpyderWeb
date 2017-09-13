@@ -1,0 +1,3 @@
+CREATE TABLE t2 (jdoc JSON)
+INSERT INTO t1 VALUES('{"key1": "value1", "key2": "value2"}');
+select jdoc->"$.key2" from t1;

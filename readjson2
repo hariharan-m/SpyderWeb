@@ -9,15 +9,17 @@ if($con->query($sql)==true){
   echo "succeed database use";
 }
 
+/*
 $sql="CREATE TABLE t2 (jdoc JSON)";
 if($con->query($sql)==true){
   echo " succeed table create";
 }else{
   echo "Error: " . $sql . "<br>" . $con->error; 
 }
+*/
 
 $jsonfile='www.google.com.json';
-$jsondata=file_(getcontents($jsonfile));
+$jsondata=file_get_contents('$jsonfile'));
 
 $sql="INSERT INTO t2 VALUES($jsondata)";
 if($con->query($sql)==true){

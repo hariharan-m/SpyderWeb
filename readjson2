@@ -8,22 +8,12 @@ $sql="USE spyder";
 if($con->query($sql)==true){
   echo "succeed database use";
 }
-
-/*
-$sql="CREATE TABLE t2 (jdoc JSON)";
-if($con->query($sql)==true){
-  echo " succeed table create";
-}else{
-  echo "Error: " . $sql . "<br>" . $con->error; 
-}
-*/
-
 $jsonfile='www.google.com.json';
-$jsondata=file_get_contents('$jsonfile'));
-
-$sql="INSERT INTO t2 VALUES($jsondata)";
+$jsondata=file_get_contents($jsonfile);
+//echo $jsondata;
+$sql="INSERT INTO t2 VALUES('$jsondata')";
 if($con->query($sql)==true){
   echo "succeed insert data";
-}
+}else   echo "Error creating database: " . $con->error;
 mysqli_close($con);
 ?>

@@ -14,6 +14,7 @@ import sys
 import logging
 import tempfile
 import subprocess
+import sys
 
 
 __version__ = '1.2.1'
@@ -363,3 +364,21 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+infile = "data.json"
+outfile = sys.argv[1]+".json"
+
+delete_list = ["\\n\\", "\\", "\\n"]
+replace_list = ["\"{\n"]
+fin = open(infile)
+fout = open(outfile, "w+")
+for line in fin:
+    for word in delete_list:
+        line = line.replace(word, "")
+        line=line.replace("n}\"","}")
+        line=line.replace("\"{","{")
+    fout.write(line)
+
+fin.close()
+fout.close()
+

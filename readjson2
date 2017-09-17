@@ -1,3 +1,29 @@
-CREATE TABLE t2 (jdoc JSON)
-INSERT INTO t1 VALUES('{"key1": "value1", "key2": "value2"}');
-select jdoc->"$.key2" from t1;
+<?php
+$con = mysqlI_connect("localhost","root","ec602g9");
+if (!$con)
+  {
+  die('Could not connect: ' . mysqli_connect_error());
+  }
+$sql="USE spyder";
+if($con->query($sql)==true){
+  echo "succeed database use";
+}
+
+/*
+$sql="CREATE TABLE t2 (jdoc JSON)";
+if($con->query($sql)==true){
+  echo " succeed table create";
+}else{
+  echo "Error: " . $sql . "<br>" . $con->error; 
+}
+*/
+
+$jsonfile='www.google.com.json';
+$jsondata=file_get_contents('$jsonfile'));
+
+$sql="INSERT INTO t2 VALUES($jsondata)";
+if($con->query($sql)==true){
+  echo "succeed insert data";
+}
+mysqli_close($con);
+?>

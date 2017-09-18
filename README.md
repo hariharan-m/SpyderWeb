@@ -34,3 +34,11 @@ And you should be up and running!
 
 ### Current Progress
 
+* We are still working on understanding and setting up [Bootstrap] (http://getbootstrap.com/).
+* We also need to implement user input and query user's website in Realtime.
+
+Here are some pictures of the website in development.
+
+[1](https://github.com/hariharan-m/SpyderWeb/blob/master/search%20website.png)
+[2](https://github.com/hariharan-m/SpyderWeb/blob/master/homepage.png)
+

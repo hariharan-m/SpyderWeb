@@ -7,3 +7,30 @@ This project uses a modified version of [httpstat by reorx](https://github.com/r
 
 ### A brief look at the internals
 
+Various technologies are being used in this project including
+* Python
+* PHP
+* HTML
+* CSS
+* Shell Scripting
+* SQL
+
+![Block Diagram](https://github.com/hariharan-m/SpyderWeb/blob/master/Untitled%20Diagram.png "Block Diagram")
+
+### How do you use this project?
+
+* Clone this repo 
+* Buy/Rent/Use a VPS or any hosting service which runs Linux (AWS and Google Cloud offer free 1 year trials!) to set up the following software:
+  * Apache
+  * MySQL
+* Create a Database with attributes given in the JSON file along with a column for name of the website.
+* ``` chmod +x ``` the required scripts 
+* Put the following entry in your crontab (change as per requirement, the following lines make the database update every 30 minutes.
+```
+30 * * * * /path/to/script/readfile.sh
+
+```
+And you should be up and running!
+
+### Current Progress
+

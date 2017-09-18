@@ -21,7 +21,7 @@ Various technologies are being used in this project including
 
 * Clone this repo 
 * Buy/Rent/Use a VPS or any hosting service which runs Linux (AWS and Google Cloud offer free 1 year trials!) to set up the following software:
-  * Apache
+  * Apache (move files to /var/www/ )
   * MySQL
 * Create a Database with attributes given in the JSON file along with a column for name of the website.
 * ``` chmod +x ``` the required scripts 
